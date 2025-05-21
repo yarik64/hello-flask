@@ -3,6 +3,7 @@
 
 from flask import Flask
 from flask import url_for
+from flask import redirect
 from flask import render_template
 
 
@@ -10,7 +11,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def root():
-    return url_for('static', filename='index.html')
+    # return url_for('static', filename='index.html')
+    return redirect(url_for("index"))
 
 
 @app.route("/index.html")
